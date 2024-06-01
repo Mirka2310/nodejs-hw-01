@@ -1,5 +1,15 @@
 import { PATH_DB } from '../constants/contacts.js';
+import fs from 'fs/promises';
 
-export const thanos = async () => {};
+export const thanos = async () => {
+const reat = await fs.readFile(PATH_DB, 'utf-8');
+const myArray = JSON.parse(read);
+const thanos = myArray.filter(()=> Math.random()>=0.5);
+
+const update = JSON.stringify(thanos, null, 2);
+await fs.writeFile(PATH_DB, update + '\n');
+
+console.log(thanos);
+};
 
 await thanos();
