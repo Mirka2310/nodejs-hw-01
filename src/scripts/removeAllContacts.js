@@ -4,7 +4,7 @@ import fs from 'fs/promises';
 
 
 export const removeAllContacts = async () => {
-const reat = await fs.readFile(PATH_DB, 'utf-8');
+const read = await fs.readFile(PATH_DB, 'utf-8');
 let myArray = JSON.parse(read);
 myArray.length = 0;
 

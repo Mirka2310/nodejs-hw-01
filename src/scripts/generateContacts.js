@@ -6,7 +6,7 @@ const generateContacts = async (number) => {
     const data = await fs.readFile(PATH_DB, 'utf-8');
     const myArray = JSON.parse(data);
 
-    for (let index = 1; index <= numder; index++){
+    for (let index = 1; index <= number; index++){
         const getContacts =await createFakeContact();
         myArray.push(getContacts);
         const update = JSON.stringify(myArray, null, 2 );

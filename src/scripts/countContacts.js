@@ -2,8 +2,9 @@ import { PATH_DB } from '../constants/contacts.js';
 import fs from 'fs/promises';
 
 export const addOneContact = async () => {
-  const data = 'Some data to write to the file';
-  await fs.writeFile(PATH_DB, data, 'utf-8');
+  const data = await fs.readFile(PATH_DB, 'utf-8');
+  const parse = JSON.parse(data);
+  console.log(parse.length);
 };
 
 await addOneContact();
